@@ -1,16 +1,19 @@
 import type { Config } from "tailwindcss";
+import type { Config as DaisyConfig } from "daisyui";
 
-const config: Config = {
-  content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
-  plugins: [require("daisyui")],
-  daisyui: {
+const daisyui: DaisyConfig = {
     themes: ["light"],
     logs: false,
-  },
+};
+
+const config: Config = {
+    content: [
+        "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+        "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+        "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    ],
+    plugins: [require("daisyui")],
+    daisyui,
 };
 
 export default config;
