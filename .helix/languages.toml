@@ -1,0 +1,11 @@
+[[language]]
+name = "typescript"
+auto-format = true
+language-servers = [ "typescript-language-server", { name = "vscode-eslint" , except-features = [ "format" ] } ]
+formatter = { command = "bun", args = ["prettier", "--config-precedence", "prefer-file", "--stdin-filepath", "file.ts" ] }
+
+[[language]]
+name = "tsx"
+auto-format = true
+language-servers = [ "typescript-language-server",  "tailwindcss-language-server", { name = "vscode-eslint" , except-features = [ "format" ] }, "tailwindcss-language-server" ]
+formatter = { command = "bun", args = ["prettier", "--config-precedence", "prefer-file", "--stdin-filepath", "file.tsx" ] }
